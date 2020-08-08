@@ -1,16 +1,16 @@
 document.write('<h3>Задача №1</h3> ');
 
 let arr = [];
-let index = 0;
-while (true) {
-    let num = prompt('Enter a number');
-    if (!num) {
-        break;
-    }
-    arr[index] = num;
-    index++;
+let len = arr.length;
+len = prompt('Enter a length of array');
+
+for(let i = 0; i < len; i++){
+    arr.push(prompt('Enter a number')); //добавление эл-в массива в конец
 }
+
+document.write('Длина массива: ', len + '</br>');
 document.write('Заданный пользователем массив: ', arr + '</br>');
+
 //Сортировка массива по возрастанию
 arr.sort(function(a, b) {
   return a - b;
@@ -19,7 +19,7 @@ let arr1 = arr;
 document.write('Отсортированный по возрастанию: ', arr1 + '</br>');
 
 //Удаление элементов из массива включительно
-arr1.splice(2,3);
+arr1.splice(1,3);
 document.write('Удаление 2-4-го элементов(включительно): ', arr1);
 
 //Задача 2
@@ -29,9 +29,9 @@ let array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63,
 let sum1 = 0;
 let pos = 0;
 let min = array[0];
-let min_i = 0;
+let minIndex = 0;
 let max = array[0];
-let max_i = 0;
+let maxIndex = 0;
 let neg = 0;
 let kol1 = 0;
 let kol2 = 0;
@@ -52,13 +52,13 @@ for (let i = 0; i < array.length; i++) {
     //Минимальный элемент массива и его порядковый номер.
     if (min > array[i]) {
         min = array[i];
-        min_i = i;
+        minIndex = i;
     }
 
     //максимальный элемент массива и его порядковый номер
     if (max < array[i]) {
         max = array[i];
-        max_i = i;
+        maxIndex = i;
     }
 
     //Определить количество отрицательных элементов.
@@ -97,11 +97,11 @@ document.write('Количество положительных элементо
 
 document.write('<pr>b)</pr>');
 document.write('Минимальное число: ', min + '</br>');
-document.write('Индекс минимального числа: ', min_i + '</br>');
+document.write('Индекс минимального числа: ', minIndex + '</br>');
 
 document.write('<pr>c)</pr>');
 document.write('Максимальное число: ', max + '</br>');
-document.write('Индекс максимального числа: ', max_i + '</br>');
+document.write('Индекс максимального числа: ', maxIndex + '</br>');
 
 document.write('<pr>d)</pr>');
 document.write('Количество отрицательных чисел: ', neg + '</br>');
